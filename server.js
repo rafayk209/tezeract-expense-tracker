@@ -7,9 +7,22 @@ var multer = require("multer"),
   bodyParser = require("body-parser"),
   path = require("path");
 var mongoose = require("mongoose");
-mongoose.connect(
-  "mongodb+srv://rafay:rafay@cluster0.97m0z.mongodb.net/registration?retryWrites=true&w=majority"
-);
+
+const DB =
+  "mongodb+srv://rafay:rafay@cluster0.97m0z.mongodb.net/registration?retryWrites=true&w=majority";
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .then(() => {
+    console.log("connected database");
+  })
+  .catch((err) => {
+    console.log("no connection");
+  });
 var fs = require("fs");
 var product = require("./model/product.js");
 var user = require("./model/user.js");
