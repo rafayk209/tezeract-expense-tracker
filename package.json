@@ -1,8 +1,7 @@
 {
-  "name": "product_api",
+  "name": "project",
   "homepage": "https://rafayk209.github.io/tezeract-expense-tracker",
   "version": "1.0.0",
-  "description": "Api for product",
   "main": "server.js",
   "scripts": {
     "predeploy": "npm run build",
